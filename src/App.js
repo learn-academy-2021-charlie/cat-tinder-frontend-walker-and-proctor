@@ -28,7 +28,7 @@ class App extends Component {
     return (
       <Router>
         <Header />
-
+        
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/catindex" component={CatIndex} />
