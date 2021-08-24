@@ -1,31 +1,24 @@
-import React, { useState } from 'react';
-import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
+import React, { Component } from 'react'
+import { NavLink } from 'react-router-dom'
 import catLogo from '../assets/cat-logo.png'
 
-const Header = (props) => {
-  const [collapsed, setCollapsed] = useState(true);
-
-  const toggleNavbar = () => setCollapsed(!collapsed);
-
-  return (
-    <div>
-      <Navbar color="faded" light>
-        <NavbarBrand href="/" className="mr-auto">reactstrap</NavbarBrand>
-        <NavbarToggler onClick={toggleNavbar} className="mr-2" />
-        <Collapse isOpen={!collapsed} navbar>
-          <Nav navbar>
-            <NavItem>
-              <NavLink href="/components/">Components</NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink href="https://github.com/reactstrap/reactstrap">GitHub</NavLink>
-            </NavItem>
-          </Nav>
-        </Collapse>
-        <img src={catLogo} alt="logo for Cat Tinder" className="cat-logo"/>
-      </Navbar>
-    </div>
-  );
+class Header extends Component {
+  render() {
+    return (
+      <header>
+        <NavLink to="/">
+          <img src={catLogo} alt="logo for Cat Tinder" className="cat-logo"/>
+        </NavLink>
+        <div className="nav-links">
+          <ul>
+            <NavLink to="/catindex">Meet the Cats</NavLink>
+          </ul>
+          <ul>
+            <NavLink to="/catnew">Add a Cat</NavLink>
+          </ul>
+        </div>
+      </header>
+    )
+  }
 }
-
-export default Header;
+export default Header

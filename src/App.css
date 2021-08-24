@@ -31,10 +31,18 @@ a:hover {
 /* ---HEADER--- */
 header {
   background-color: #EBE0D0;
+  display: flex;
+  justify-content: space-between;
 }
 .cat-logo {
   width: 150px;
   margin-left: 20px;
+}
+.nav-links {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  padding-right: 10px;
 }
 
 /* ---NOT FOUND--- */
