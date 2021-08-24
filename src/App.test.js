@@ -7,9 +7,8 @@ import CatIndex from './pages/CatIndex'
 
 Enzyme.configure({ adapter: new Adapter()})
 
-describe('When the app renders', ()=>{
-  it('displays a header and a footer',()=>{
-
+describe('When the app renders', () => {
+  it('displays a header and a footer', () => {
     //arrange
     const renderedApp = shallow(<App/>)
     //act
@@ -19,22 +18,20 @@ describe('When the app renders', ()=>{
     expect(renderedHeader.length).toEqual(1)
     expect(renderedFooter.length).toEqual(1)
   })
-  it('provides a route"/" to the home component',()=>{
-     //arrange
-     const renderedApp = shallow(<App/>)
-     //act
-     const renderedHomeRoute = renderedApp.find('[path="/"]')
-    //  console.log("rendered home route debug", renderedHomeRoute.debug())
-    //  console.log("rendered home route props", renderedHomeRoute.props())
+  it('provides a route"/" to the home component', () => {
+    //arrange
+    const renderedApp = shallow(<App/>)
+    //act
+    const renderedHomeRoute = renderedApp.find('[path="/"]')
     //assert
     expect(renderedHomeRoute.props().component).toEqual(Home)
   })
-  it('provides a route "/catindex" to the CatIndex component',()=>{
+  it('provides a route "/catindex" to the CatIndex component', () => {
     //arrange
     const renderedApp = shallow(<App/>)
     //act
     const renderedCatIndexRoute = renderedApp.find('[path="/catindex"]')
-   //assert
-   expect(renderedCatIndexRoute.props().component).toEqual(CatIndex)
- })
+    //assert
+    expect(renderedCatIndexRoute.props().component).toEqual(CatIndex)
+  })
 })
