@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
-import { Button, Card, CardTitle, CardText } from 'reactstrap'
-import { NavLink } from 'react-router-dom'
+import { Card, CardTitle, CardText } from 'reactstrap'
 
 class CatShow extends Component {
  render() {

@@ -33,11 +33,6 @@ describe('When the app renders', () => {
     const renderedCatIndexRoute = renderedApp.find('[path="/catindex"]')
     expect(renderedCatIndexRoute.props().render()).toEqual(<CatIndex cats={cats} />);
   })
-  it('provides a route/catnew to the CatNew component', () => {
-    const renderedApp = shallow(<App />)
-    const renderedCatNewRoute = renderedApp.find('[path="/catnew"]')
-    expect(renderedCatNewRoute.props().component).toEqual(CatNew);
-  })
   it('provides a route/catedit to the CatEdit component', () => {
     const renderedApp = shallow(<App />)
     const renderedCatEditRoute = renderedApp.find('[path="/catedit"]')

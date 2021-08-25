@@ -23,6 +23,11 @@ class App extends Component {
       cats: cats
     }
   }
+
+  createCat = (newCat) => {
+    console.log(newCat)
+  }
+
   render() {
     return (
       <Router>
@@ -30,15 +35,13 @@ class App extends Component {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/catindex" render={(props) => <CatIndex cats={this.state.cats} />} />
-
           <Route path="/catshow/:id" render={(props) => {
             let id = props.match.params.id
             let cat = this.state.cats.find(cat => cat.id === +id)
             return <CatShow cat={cat} />
           }}/>
-
           <Route path="/catedit" component={CatEdit} />
-          <Route path="/catnew" component={CatNew} />
+          <Route path="/catnew" render={(props) => <CatNew createCat={this.createCat} />} />
           <Route component={NotFound} />
         </Switch>
         <Footer />
