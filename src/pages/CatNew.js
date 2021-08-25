@@ -28,11 +28,12 @@ class CatNew extends Component {
 
   render() {
     return (
-      <>
-        <h3>I am the new page</h3>
+      <div className="page-body">
+        <h3>Add Your Cat!</h3>
+        <br />
         <Form>
           <FormGroup>
-            <Label for="name">Name</Label>
+            <Label for="name">What is your cat's name?</Label>
             <Input
               type="text"
               name="name"
@@ -42,9 +43,11 @@ class CatNew extends Component {
           </FormGroup>
           <br />
           <FormGroup>
-            <Label for="age">Age</Label>
+            <Label for="age">How old is your cat?</Label>
             <Input
-              type="text"
+              type="number"
+              min="0"
+              max="20"
               name="age"
               onChange={this.handleChange}
               value={this.state.form.age}
@@ -52,7 +55,7 @@ class CatNew extends Component {
           </FormGroup>
           <br />
           <FormGroup>
-            <Label for="enjoys">Enjoys</Label>
+            <Label for="enjoys">What does your cat enjoy?</Label>
             <Input
               type="text"
               name="enjoys"
@@ -60,12 +63,13 @@ class CatNew extends Component {
               value={this.state.form.enjoys}
             />
           </FormGroup>
+          <br />
           <Button name="submit" onClick={this.handleSubmit}>
             Add New Cat
           </Button>
         </Form>
         {this.state.submitted && <Redirect to="/catindex" />}
-      </>
+      </div>
     )
   }
 }
