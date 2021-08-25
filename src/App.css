@@ -45,9 +45,34 @@ header {
   padding-right: 10px;
 }
 
+/* ---INDEX--- */
+.index-cards {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.card.card-body {
+  width: 300px;
+  background-color: #FFFEF1;
+  margin: 20px;
+}
+.btn.btn-secondary {
+  background-color: #FF0080;
+  font-weight: bolder;
+}
+.btn.btn-secondary:hover {
+  color: #FF0080;
+  background-color: white;
+}
+
 /* ---NOT FOUND--- */
 .cat-friend {
   width: 400px;
   border: 1px solid black;
   border-radius: 10px;
+}
+
+/* ---SHOW--- */
+.card-show.card.card-body {
+  margin: 0 auto;
 }
