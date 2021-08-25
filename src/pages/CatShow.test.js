@@ -13,14 +13,11 @@ describe("When CatShow renders", () => {
     age: 1,
     enjoys: "getting all the attention"
   }
-  it("displays a header", () => {
-    const catShow = shallow(<CatShow cat={cat} />)
-    const showHeading = catShow.find("h3")
-    expect(showHeading.text()).toEqual("I am the Cat show page")
-  })
   it("displays a list of cats", () => {
     const catShow = shallow(<CatShow cat={cat} />)
-    const showContent = catShow.find("p")
-    expect(showContent.length).toEqual(3)
+    const showTitle = catShow.find("CardTitle")
+    expect(showTitle.length).toEqual(1)
+    const showText = catShow.find("CardText")
+    expect(showText.length).toEqual(2)
   })
 })
